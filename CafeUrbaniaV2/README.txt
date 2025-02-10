@@ -15,10 +15,12 @@ Architecture of the project :
  │    ├── 📂 CafeUrbaniaV2
  │    │    ├── 📜 app.py     <-- ✅ Main App Code
  │    │    ├── 📜 requirements.txt
- │    │    ├── 📂 venv
+ │    │    ├── 📜 db.json
+ │    │    ├── 📂 static
+ │    │    ├── 📂 templates
 
 
-Useful Commands :
+Useful Commands (Manual):
 
 # activer le venv :
 .\venv\Scripts\Activate.ps1 
