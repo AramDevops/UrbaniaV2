@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Café Urbania - Panneau d'administration</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <link rel="icon" href="static/images/fevicon.png" type="image/gif">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        /* Styles personnalisés pour le panneau d'administration */
+        
+        .admin-section {
+            margin-bottom: 50px;
+        }
+        
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #fff;
+        }
+        /* Styles pour le modal d'édition */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1050;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+        
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close-modal:hover,
+        .close-modal:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="main-layout">
+    <!-- Loader -->
+    <div class="loader_bg">
+        <div class="loader"><img src="static/images/loading.gif" alt="#" /></div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div id="my_container" class="container-fluid">
+            <div class="row d_flex align-items-center">
+                <div class="col-xl-1 col-lg-3 col-sm-2 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="/">Café Urbania</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+                    <nav class="navigation navbar navbar-expand-md navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                    </nav>
+                </div>
+                <div class="col-md-4 re_no text-right">
+                    <a id="logout_admin" href="/logout" class="read_more bounceInLeft">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Contenu du panneau d'administration -->
+    <div class="section blue_bg py-5">
+        <div class="container">
+            <h2 class="section-title">Panneau d'administration</h2>
+
+            <!-- Section 1 : Commandes -->
+            <div class="admin-section">
+                <div class="card">
+                    <div class="card-header">Commandes</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Numéro de commande</th>
+                                        <th>Utilisateur</th>
+                                        <th>Articles</th>
+                                        <th>Prix total</th>
+                                        <th>Date</th>
+                                        <th>Statut</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Section 1 -->
+
+            <!-- Section 2 : Messages des clients -->
+            <div class="admin-section">
+                <div class="card">
+                    <div class="card-header">Messages des clients</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>ID de contact</th>
+                                        <th>Prénom</th>
+                                        <th>Nom</th>
+                                        <th>Catégorie</th>
+                                        <th>Notification</th>
+                                        <th>Téléphone</th>
+                                        <th>Courriel</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contactsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Section 2 -->
+
+            <!-- Section 3 : Gestion des menus (CRUD) -->
+            <div class="admin-section">
+                <div class="card">
+                    <div class="card-header">Gestion des menus</div>
+                    <div class="card-body">
+                        <!-- Formulaire pour ajouter un nouvel article de menu -->
+                        <form id="menuForm" enctype="multipart/form-data">
+
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="itemName">Nom de l'article</label>
+                                    <input type="text" class="form-control" id="itemName" name="name" placeholder="Entrez le nom de l'article" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="itemCategory">Catégorie</label>
+                                    <select class="form-control" id="itemCategory" name="category" required>
+                                       <option value="breuvages">Breuvages</option>
+                                       <option value="plats">Plats</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="itemPrice">Prix</label>
+                                    <input type="number" step="0.01" class="form-control" id="itemPrice" name="price" placeholder="Prix" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="itemDescription">Description</label>
+                                    <input type="text" class="form-control" id="itemDescription" name="description" placeholder="Entrez la description" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="itemPicture">Image</label>
+                                    <input type="file" class="form-control" id="itemPicture" name="itemPicture" required>
+                                </div>
+                                <div class="form-group col-md-6 align-self-end">
+                                    <button type="submit" class="btn btn-primary btn-block" disabled>Ajouter l'article</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Tableau pour afficher les articles du menu existants -->
+                        <div class="table-responsive mt-4">
+                            <table class="table table-striped" id="menuTable">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>ID de l'article</th>
+                                        <th>Nom</th>
+                                        <th>Catégorie</th>
+                                        <th>Prix</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="menuTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Section 3 -->
+        </div>
+    </div>
+    <!-- Fin Contenu Admin -->
+
+    <!-- Modal d'édition d'un article de menu -->
+    <div id="editMenuModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Éditer l'article de menu</h3>
+            <form id="editMenuForm">
+                <input type="hidden" id="editItemId">
+                <div class="form-group">
+                    <label for="editItemName">Nom de l'article</label>
+                    <input type="text" class="form-control" id="editItemName" name="newItemName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editItemCategory">Catégorie</label>
+                    <select class="form-control" id="editItemCategory" name="newItemCategory" required>
+            <option value="breuvages">Breuvages</option>
+            <option value="plats">Plats</option>
+          </select>
+                </div>
+                <div class="form-group">
+                    <label for="editItemPrice">Prix</label>
+                    <input type="number" step="0.01" class="form-control" id="editItemPrice" name="newItemPrice" required>
+                </div>
+                <div class="form-group">
+                    <label for="editItemDescription">Description</label>
+                    <input type="text" class="form-control" id="editItemDescription" name="newItemDescription" required>
+                </div>
+                <div class="form-group">
+                    <label for="editItemPicture">Image (fichier)</label>
+                    <input type="file" class="form-control" id="editItemPicture" name="newItemPicture">
+                </div>
+                <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+            </form>
+        </div>
+    </div>
+    <!-- Fin Modal d'édition -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="infoma">
+                            <h3>Suivez-nous</h3>
+                            <ul class="social_icon">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            </ul>
+                            <ul class="conta">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Locations</li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i> Call +01 1234567890</li>
+                                <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> cafeurbania@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>© 2020 All Rights Reserved.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Javascript Files -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery-3.0.0.min.js"></script>
+    <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/adminSide.js"></script>
+
+</body>
+
+</html>
