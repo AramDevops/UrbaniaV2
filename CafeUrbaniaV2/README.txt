@@ -18,16 +18,23 @@ Architecture of the project :
  │    │    ├── 📜 db.json
  │    │    ├── 📂 static
  │    │    ├── 📂 templates
+ │    │    ├── 📂 venv <-- 👀 À créer !
 
 
-Useful Commands (Manual):
+Installation manuelle :
+cd URBANIA_APP\CafeUrbaniaV2> 
 
-# activer le venv :
+# Créer le venv :
+python -m venv venv 
+
+# Activer le venv :
 .\venv\Scripts\Activate.ps1 
 
-# generate the requirements
-pip freeze > requirements.txt
-
-#install the requirements if generated
+# Install the requirements :
 python -m pip install -r requirements.txt
+
+# Run app :
+python app.py
+
+
 
