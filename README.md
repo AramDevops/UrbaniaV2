@@ -6,7 +6,7 @@ Cours : 420 4E6 MO - Analyse et conception de modèles
 
 # CaféUrbania V2 ☕
 
-CaféUrbaniaV2, une application pédagogique innovante conçue pour offrir aux étudiants une expérience pratique dans l’application de multiples concepts DevOps et de développement logiciel. Ce projet vous invite à explorer et maîtriser une gamme étendue de compétences techniques essentielles dans le monde actuel du développement d’applications.
+CaféUrbaniaV2, une application pédagogique conçue pour offrir aux étudiants une expérience pratique dans l’application de multiples concepts DevOps et de développement logiciel. Ce projet vous invite à explorer et maîtriser une gamme étendue de compétences techniques essentielles dans le monde actuel du développement d’applications.
 
 ---
 
