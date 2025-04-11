@@ -1,4 +1,4 @@
-## Enseignant et Cours 📚👨‍🏫
+# Enseignant et Cours 📚👨‍🏫
 
 Professeur/Auteur : Akram Nasr  
 Courriel : Akram.Nasr@cmontmorency.qc.ca  
