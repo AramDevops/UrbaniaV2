@@ -83,5 +83,3 @@ Une fois l'application lancée, une URL vous sera affichée pour accéder à l'a
 - **Dépannage :** En cas de problème avec l'installation automatique, l'installation manuelle est obligatoire pour garantir le bon fonctionnement de l'application.
 
 Suivez ces instructions dans l'ordre pour assurer une installation réussie de l'application. En cas de difficulté avec l'installation automatique, n'oubliez pas de procéder à l'installation manuelle.
-
-Vous pouvez enregistrer ce contenu dans votre fichier `README.md`. Les couleurs ajoutées via les balises HTML devraient s'afficher correctement dans les environnements qui supportent le rendu HTML dans Markdown. Bonne installation de l'application !
