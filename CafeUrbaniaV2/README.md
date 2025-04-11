@@ -4,11 +4,9 @@
 **Courriel :** [Akram.Nasr@cmontmorency.qc.ca](mailto:Akram.Nasr@cmontmorency.qc.ca)  
 **Cours :** 420 4E6 MO - Analyse et conception de modèles
 
----
-
 ## Architecture du projet
 
-```plaintext
+```
 📂 Desktop
  ├── 📂 URBANIA_APP
  │    ├── 📜 mydatabase.sql       <-- Fichier SQL
@@ -22,7 +20,7 @@
  │         ├── 📂 templates
  │         └── 📂 venv          <-- À créer (Voir la section 2)
 
-
+```
 ## <span style="color:#e76f51;">Installation automatique</span>
 
 ### 1. Positionnement du projet  
@@ -37,47 +35,46 @@ Placez le dossier du projet sur votre bureau et nommez-le **URBANIA_APP** (ne mo
 - Ce script complète l'installation de l'application et, une fois terminé, démarre l'application.  
 - Une URL s'affichera pour vous permettre d'accéder à l'application via votre navigateur.
 
----
-
 ## <span style="color:#e9c46a;">Installation manuelle</span>  
 (*Obligatoire en cas de problème avec l'installation automatique*)
 
 ### 1. Accéder au répertoire de l'application  
 Ouvrez une fenêtre PowerShell et naviguez dans le dossier contenant le code de l'application avec la commande suivante :  
-```bash
+
+```
 cd Desktop\URBANIA_APP\CafeUrbaniaV2
 ```
 
 ### 2. Création et activation de l'environnement virtuel  
 **Création du venv :**  
-```bash
+```
 python -m venv venv
 ```
 
 **Activation du venv :**  
 Si l'activation de l'environnement virtuel est bloquée par les restrictions de sécurité de Windows, exécutez d'abord :  
-```powershell
+```
 Set-ExecutionPolicy Unrestricted -Force
 ```
+
 Puis activez l'environnement virtuel :  
-```powershell
+```
 .\venv\Scripts\Activate.ps1
 ```
 
 ### 3. Installation des dépendances  
 Installez les dépendances nécessaires en exécutant :  
-```bash
+```
 python -m pip install -r requirements.txt
 ```
 
 ### 4. Lancement de l'application  
 Démarrez l'application en exécutant :  
-```bash
+
+```
 python app.py
 ```
 Une fois l'application lancée, une URL vous sera affichée pour accéder à l'application via votre navigateur.
-
----
 
 ## <span style="color:#f4a261;">Remarques importantes</span>
 
@@ -85,10 +82,6 @@ Une fois l'application lancée, une URL vous sera affichée pour accéder à l'a
 - **XAMPP :** Pour l'installation automatique, **XAMPP** doit être lancé et le serveur SQL doit être actif.  
 - **Dépannage :** En cas de problème avec l'installation automatique, l'installation manuelle est obligatoire pour garantir le bon fonctionnement de l'application.
 
-
 Suivez ces instructions dans l'ordre pour assurer une installation réussie de l'application. En cas de difficulté avec l'installation automatique, n'oubliez pas de procéder à l'installation manuelle.
-
-
----
 
 Vous pouvez enregistrer ce contenu dans votre fichier `README.md`. Les couleurs ajoutées via les balises HTML devraient s'afficher correctement dans les environnements qui supportent le rendu HTML dans Markdown. Bonne installation de l'application !
