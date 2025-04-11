@@ -408,11 +408,3 @@ def admin_delete_menu_item(item_id):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)
-
-
-#pip freeze > requirements.txt
-#python -m pip install -r requirements.txt
-
-#.\venv\Scripts\Activate.ps1
-
-
