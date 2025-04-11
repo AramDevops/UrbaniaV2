@@ -1,7 +1,4 @@
-Voici le contenu complet du fichier README en format Markdown, avec une structure optimisée et une mise en forme améliorée. Vous pouvez copier ce texte dans un fichier nommé, par exemple, `README.md` :
-
-```markdown
-# <span style="color:#2a9d8f;">Installation de URBANIA_APP</span>
+# Installation de URBANIA_APP
 
 **Professeur/Auteur :** Akram Nasr  
 **Courriel :** [Akram.Nasr@cmontmorency.qc.ca](mailto:Akram.Nasr@cmontmorency.qc.ca)  
@@ -9,7 +6,7 @@ Voici le contenu complet du fichier README en format Markdown, avec une structur
 
 ---
 
-## <span style="color:#264653;">Architecture du projet</span>
+## Architecture du projet
 
 ```plaintext
 📂 Desktop
@@ -24,9 +21,7 @@ Voici le contenu complet du fichier README en format Markdown, avec une structur
  │         ├── 📂 static
  │         ├── 📂 templates
  │         └── 📂 venv          <-- À créer (Voir la section 2)
-```
 
----
 
 ## <span style="color:#e76f51;">Installation automatique</span>
 
@@ -90,10 +85,9 @@ Une fois l'application lancée, une URL vous sera affichée pour accéder à l'a
 - **XAMPP :** Pour l'installation automatique, **XAMPP** doit être lancé et le serveur SQL doit être actif.  
 - **Dépannage :** En cas de problème avec l'installation automatique, l'installation manuelle est obligatoire pour garantir le bon fonctionnement de l'application.
 
----
 
 Suivez ces instructions dans l'ordre pour assurer une installation réussie de l'application. En cas de difficulté avec l'installation automatique, n'oubliez pas de procéder à l'installation manuelle.
-```
+
 
 ---
 
