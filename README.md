@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/fbecf829-86ac-4755-af0a-c321b){ width=300px }
+<img src="https://github.com/user-attachments/assets/fbecf829-86ac-4755-af0a-c321b" alt="image" style="width:300px;">
 
 # Enseignant et Cours 📚👨‍🏫
 
