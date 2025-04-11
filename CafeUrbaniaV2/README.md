@@ -10,15 +10,15 @@
 📂 Desktop
  ├── 📂 URBANIA_APP
  │    ├── 📜 mydatabase.sql       <-- Fichier SQL
- │    ├── 📜 setup_db.bat         <-- Script d'installation de la DB (auto-installation)
- │    ├── 📜 setup_app.bat        <-- Script d'installation de l'app (auto-installation)
+ │    ├── 📜 setup_db.bat         <-- Script d'installation de la DB (auto-installation 2)
+ │    ├── 📜 setup_app.bat        <-- Script d'installation de l'app (auto-installation 1)
  │    ├── 📂 CafeUrbaniaV2
  │         ├── 📜 app.py          <-- Code principal de l'application
  │         ├── 📜 requirements.txt
  │         ├── 📜 db.json
  │         ├── 📂 static
  │         ├── 📂 templates
- │         └── 📂 venv          <-- À créer (Voir la section 2)
+ │         └── 📂 venv          <-- À créer 
 
 ```
 ## <span style="color:#e76f51;">Installation automatique</span>
