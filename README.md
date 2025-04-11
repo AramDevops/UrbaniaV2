@@ -1,5 +1,5 @@
 
-<img src="https://github.com/user-attachments/assets/6a3e60f2-4691-4db5-b6bc-eb20c6f01872" alt="image" width="150">
+<img src="https://github.com/user-attachments/assets/6a3e60f2-4691-4db5-b6bc-eb20c6f01872" alt="image" width="400">
 
 
 # Enseignant et Cours 📚👨‍🏫
